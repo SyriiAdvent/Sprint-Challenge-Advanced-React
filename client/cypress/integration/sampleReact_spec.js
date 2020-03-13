@@ -1,5 +1,7 @@
-import { App } from '../../src/App'
+/// <reference types="cypress" />
+
 import React from 'react'
+import App from '../../src/App'
 
 describe("First Test", () => {
   it("is working", () => {
@@ -7,20 +9,35 @@ describe("First Test", () => {
   });
 });
 
-describe("Second Test", () => {
+describe("Application Page loads", () => {
   it("Visit the app", () => {
-    cy.visit("/");
+    cy.visit("");
   });
 });
 
-describe("Third Test", () => {
+describe("Navigation Bar Works", () => {
   it("Navbar loads", () => {
-    cy.visit("/");
+    cy.visit("");
   });
   it('navbar Title Works', () => {
     cy.contains('Womens World Soccor Players')
   })
-  it('navbar Theme Toggler works', () => {
-    cy.contains('.toggle').click()
+  it('navbar Theme Toggler changes to light mode & dark mode', () => {
+    for (let index = 0; index <= 10; index++) {
+      cy.get('button').click({ position: 'center' })
+    }
   })
+  it('navbar Theme Toggler changes to dark mode', () => {
+    cy.get('button').click({ position: 'center' })
+  })
+
+  describe('Player Cards Display', () => {
+    it('Cards loaded', () => {
+      cy.contains('Alex Morgan')
+      cy.contains('Mallory Pugh')
+      cy.contains('Gaëtane Thiney')
+      cy.contains('Delphine Cascarino')
+    })
+  })
+  
 });

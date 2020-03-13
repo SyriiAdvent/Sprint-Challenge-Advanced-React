@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="navbar">
       <h1>Womens World Soccor Players</h1>
       <div className="dark-mode__toggle">
-        <div
+        <button
           onClick={toggleMode}
           className={darkMode ? 'toggle toggled' : 'toggle'}
         />
