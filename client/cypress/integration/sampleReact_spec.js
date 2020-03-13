@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 
 import React from 'react'
-import App from '../../src/App'
 
 describe("First Test", () => {
   it("is working", () => {
@@ -30,14 +29,14 @@ describe("Navigation Bar Works", () => {
   it('navbar Theme Toggler changes to dark mode', () => {
     cy.get('button').click({ position: 'center' })
   })
-
-  describe('Player Cards Display', () => {
-    it('Cards loaded', () => {
-      cy.contains('Alex Morgan')
-      cy.contains('Mallory Pugh')
-      cy.contains('Gaëtane Thiney')
-      cy.contains('Delphine Cascarino')
-    })
-  })
-  
 });
+
+describe('Player Cards Display', () => {
+  it('Cards loaded', () => {
+    cy.visit("");
+    cy.contains('Alex Morgan')
+    cy.contains('Mallory Pugh')
+    cy.contains('Gaëtane Thiney')
+    cy.contains('Delphine Cascarino')
+  })
+})
