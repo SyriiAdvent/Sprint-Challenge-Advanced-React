@@ -5,7 +5,7 @@ import axios from "axios";
 import { useLocalStorage } from "./Hooks/useLocalStorage";
 import NavBar from './Components/NavBar'
 import PlayerCards from './Components/PlayerCards'
-import BarChart from './Components/BarChart'
+// import BarChart from './Components/BarChart'
 
 function App() {
   const [serverCall, setServerCall] = useLocalStorage("data", {});
@@ -23,8 +23,8 @@ function App() {
   return (
     <div className="App" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <NavBar />
-        <BarChart data={localData} />
-      {JSON.parse(localData).map(ele => <PlayerCards key={ele.id} data={ele} /> )}
+        {/* <BarChart data={localData} /> */}
+      {localData ? JSON.parse(localData).map(ele => <PlayerCards key={ele.id} data={ele} /> ) : null }
     </div>
   )
 }
