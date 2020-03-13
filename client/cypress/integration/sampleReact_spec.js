@@ -32,11 +32,20 @@ describe("Navigation Bar Works", () => {
 });
 
 describe('Player Cards Display', () => {
-  it('Cards loaded', () => {
+  it('Cards loaded - Alex Morgan', () => {
     cy.visit("");
     cy.contains('Alex Morgan')
-    cy.contains('Mallory Pugh')
-    cy.contains('Gaëtane Thiney')
-    cy.contains('Delphine Cascarino')
+  })
+  it('Cards loaded - Wendie Renard', () => {
+    cy.visit("");
+    cy.contains('Wendie Renard')
+  })
+  it('Cards loaded - Daniëlle van de Donk', () => {
+    cy.visit("");
+    cy.contains('Daniëlle van de Donk')
+  })
+  it('Cards loaded - Cristiane Rozeira', () => {
+    cy.visit("");
+    cy.contains('Cristiane Rozeira')
   })
 })
